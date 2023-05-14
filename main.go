@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"gin_web_api/book"
 	"gin_web_api/handler"
 	"log"
@@ -26,8 +25,6 @@ func main() {
 	bookRepository := book.NewRepository(db)
 	bookService := book.NewService(bookRepository)
 	bookHandler := handler.NewBookHandler(bookService)
-
-	fmt.Println(bookService.FindAll())
 
 	router := gin.Default()
 
